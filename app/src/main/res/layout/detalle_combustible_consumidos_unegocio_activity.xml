@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    tools:context=".detalle_combustible_consumidos_unegocio_Activity">
+
+
+
+    <RelativeLayout
+        style="@style/parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:weightSum="12">
+
+            <LinearLayout
+                style="@style/parent"
+                android:background="@drawable/login_shape_bk"
+                android:orientation="vertical"
+                android:layout_weight="3">
+
+                <ImageView
+                    style="@style/parent"
+                    android:background="@drawable/ic_login_bk"
+                    android:layout_height="100dp"
+                    android:contentDescription="login background"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+            style="@style/headerText"
+            android:layout_gravity="center"
+            android:text="Combustibles - Consumidos"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            style="@style/headerText"
+            android:layout_gravity="center"
+            android:id="@+id/txtfechas"
+            android:text="Consumidos por U. Negocio"
+            android:layout_marginTop="40dp"/>
+
+
+
+        <LinearLayout
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/solicitados_combustibles"
+                android:layout_gravity="center"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        style="@style/headerText"
+                        android:textSize="25dp"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:text="Unidades de Negocio"/>
+
+                    <TextView
+                        android:id="@+id/txttransportes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="70dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="Transportes: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtparedones"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="120dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Paredones: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtpichilemu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="170dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Pichilemu: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtpencahue1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="220dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Pencahue I: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtgrupo31"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="270dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Grupo 31: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtmapel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="320dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Mapel: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/txtcentrovial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="370dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Centrovial: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtcauquenescosta_etapa3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="420dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Cauquenes costa: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/txtasfaltos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="470dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Asfaltos: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtcuricosur2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="520dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Curico Sur II: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtnivelservicio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="570dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Nivel de Servicio: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtmaquinaria"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="620dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Maquinaria: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txthuencuecho"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="670dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Huencuecho: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtaridos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="720dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Aridos: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txttalcanorte2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="770dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Talca Norte II: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtm40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="820dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Sauzal M-40: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txthuasocampesino"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="870dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Huaso Campesino: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtpavimentacion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="920dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Pavimentacion: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtempedrado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="970dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Empedrado: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtoficinacentral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1020dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Oficina Central: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtvariasobras"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1070dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Varias Obras: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txticalma"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1120dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Melipeuco - Icalma: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtrutasvariaspencahue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1170dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Rutas varias, Pencahue: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtrincondelobos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1220dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Rincon de Lobos: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtk25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1270dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="K-25: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txttaller"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1320dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Taller: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txttrucktal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1370dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Trucktal: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtlolol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1420dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Lolol etapa III: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtmayser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1470dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="Mayser: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

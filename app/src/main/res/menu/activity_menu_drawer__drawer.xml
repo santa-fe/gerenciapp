@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item android:title="Combustibles">
+        <menu>
+            <item
+                android:id="@+id/nav_petroleo_pedidos"
+                android:icon="@drawable/ic_shopping_cart_black_24dp"
+                android:title="Pedidos">
+            </item>
+            <item
+                android:id="@+id/nav_petroleo_compras"
+                android:icon="@drawable/ic_attach_money_black_24dp"
+                android:title="Compras" />
+            <item
+                android:id="@+id/nav_petroleo_consumo"
+                android:icon="@drawable/ic_local_gas_station_black_24dp"
+                android:title="Consumo" />
+        </menu>
+    </item>
+
+</menu>

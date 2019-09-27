@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ededed"
+    tools:context=".Combustibles_pedidos_fragment">
+
+    <RelativeLayout
+        style="@style/parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:weightSum="12">
+
+            <LinearLayout
+                style="@style/parent"
+                android:background="@drawable/login_shape_bk"
+                android:orientation="vertical"
+                android:layout_weight="3">
+
+                <ImageView
+                    style="@style/parent"
+                    android:background="@drawable/ic_login_bk"
+                    android:layout_height="100dp"
+                    android:contentDescription="login background"
+                    />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <TextView
+            style="@style/headerText"
+            android:layout_gravity="center"
+            android:text="Combustibles - Pedidos"
+            android:layout_marginTop="5dp"/>
+        <TextView
+            style="@style/headerText"
+            android:layout_gravity="center"
+            android:id="@+id/txtfechas"
+            android:text=""
+            android:layout_marginTop="40dp"/>
+
+        <LinearLayout
+            android:clipToPadding="false"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/solicitados_combustibles"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="100dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        style="@style/headerText"
+                        android:layout_marginTop="10dp"
+                        android:textSize="25dp"
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        android:text="Lts solicitados"/>
+
+                    <TextView
+                        android:id="@+id/txtsolicitadoshoy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="80dp"
+                        android:gravity="center"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/asignados_combustibles"
+                android:layout_width="320dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/headerText"
+                        android:textSize="25dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"
+                        android:text="Lts asignados"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/txtasignadoshoy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="80dp"
+                        android:gravity="center"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="50dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</FrameLayout>
