@@ -27,9 +27,8 @@
                     android:layout_height="100dp"
                     android:contentDescription="login background"
                     />
+
             </LinearLayout>
-
-
 
         </LinearLayout>
         <TextView
@@ -57,7 +56,7 @@
             <android.support.v7.widget.CardView
                 android:id="@+id/consumidos_combustibles"
                 android:layout_width="330dp"
-                android:layout_height="170dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground">
@@ -91,19 +90,41 @@
                         android:gravity="center"
                         android:layout_centerHorizontal="true"
                         android:text="Aproximado base afecta"
-                        android:textSize="15dp"
+                        android:textSize="18dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/txtpromediocomprado"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="125dp"
+                        android:layout_marginTop="130dp"
                         android:gravity="center"
                         android:layout_centerHorizontal="true"
                         android:text=""
                         android:textSize="15dp"
                         android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="160dp"
+                        android:gravity="center"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:layout_centerHorizontal="true"
+                        android:text="Diferencia al mes anterior"/>
+
+                    <TextView
+                        android:id="@+id/txtdiferencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="180dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="15dp"/>
+
 
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
@@ -111,7 +132,7 @@
             <android.support.v7.widget.CardView
                 android:id="@+id/consumidos_detalle_combustibles"
                 android:layout_width="330dp"
-                android:layout_height="350dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground">
@@ -121,7 +142,7 @@
                     android:layout_height="match_parent">
                     <TextView
                         style="@style/headerText"
-                        android:textSize="30dp"
+                        android:textSize="25dp"
                         android:layout_marginTop="10dp"
                         android:textColor="#000"
                         android:layout_gravity="center"
@@ -131,68 +152,56 @@
                         android:id="@+id/txtgeneradores_detalle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="70dp"
+                        android:layout_marginTop="50dp"
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Generadores: "
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txtgeneradores_detalle_total"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAlignment="center"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="70dp"
-                        android:layout_marginLeft="150dp"
-                        android:gravity="center"
-                        android:text=""
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/txtcamiones_detalle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="120dp"
+                        android:layout_marginTop="100dp"
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Camiones: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/txtmaquinaria_detalle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="170dp"
+                        android:layout_marginTop="150dp"
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Maquinaria: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/txtflotaliviana_detalle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="220dp"
+                        android:layout_marginTop="200dp"
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Flota liviana: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/txtotros_detalle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="270dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="250dp"
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Otros: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                 </RelativeLayout>

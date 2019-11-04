@@ -40,6 +40,17 @@
             android:label="@string/title_activity_menu_drawer_">
         </activity>
 
+        <activity
+            android:name=".Pruebas_Activity"
+            android:label="@string/title_activity_menu_drawer_">
+        </activity>
+        <activity
+            android:name=".Combustibles_pedidos_detalle_activity"
+            android:label="@string/title_activity_menu_drawer_">
+        </activity>
+
+
+
 
     </application>
 

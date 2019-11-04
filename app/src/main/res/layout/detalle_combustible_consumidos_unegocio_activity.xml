@@ -59,7 +59,9 @@
             <android.support.v7.widget.CardView
                 android:id="@+id/solicitados_combustibles"
                 android:layout_gravity="center"
-                android:layout_width="320dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
                 android:clickable="true"
@@ -86,7 +88,7 @@
                         android:layout_marginTop="70dp"
                         android:layout_marginLeft="10dp"
                         android:text="Transportes: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -97,7 +99,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Paredones: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -108,7 +110,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Pichilemu: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -119,7 +121,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Pencahue I: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -130,7 +132,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Grupo 31: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -141,7 +143,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Mapel: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
                     <TextView
                         android:id="@+id/txtcentrovial"
@@ -151,7 +153,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Centrovial: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -162,7 +164,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Cauquenes costa: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
                     <TextView
                         android:id="@+id/txtasfaltos"
@@ -172,7 +174,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Asfaltos: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -183,7 +185,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Curico Sur II: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -194,7 +196,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Nivel de Servicio: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -205,7 +207,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Maquinaria: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -216,7 +218,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Huencuecho: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -227,7 +229,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Aridos: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -238,7 +240,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Talca Norte II: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -249,7 +251,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Sauzal M-40: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -260,7 +262,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Huaso Campesino: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -271,7 +273,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Pavimentacion: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -282,7 +284,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Empedrado: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -293,7 +295,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Oficina Central: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -304,7 +306,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Varias Obras: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -315,7 +317,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Melipeuco - Icalma: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -326,7 +328,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Rutas varias, Pencahue: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -337,7 +339,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Rincon de Lobos: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -348,7 +350,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="K-25: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -359,7 +361,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Taller: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -370,7 +372,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Trucktal: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -381,7 +383,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Lolol etapa III: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -392,7 +394,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text="Mayser: "
-                        android:textSize="20dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
 

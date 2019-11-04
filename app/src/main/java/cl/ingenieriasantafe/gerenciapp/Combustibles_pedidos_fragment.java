@@ -72,7 +72,7 @@ public class Combustibles_pedidos_fragment extends Fragment {
         cardasignados.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplicationContext(),Combustibles_detalle_asignados_Activity.class);
+                Intent intent = new Intent(getActivity().getApplicationContext(),Combustibles_pedidos_detalle_activity.class);
                 startActivity(intent);
             }
         });
@@ -82,20 +82,16 @@ public class Combustibles_pedidos_fragment extends Fragment {
 
     private void getPedidosInfo(){
         mRequestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        mStringRequest = new StringRequest(Request.Method.GET, apisolicitados + "/" + fecha + "/", new Response.Listener<String>() {
+        mStringRequest = new StringRequest(Request.Method.GET, apisolicitados + "/" + fecha + "/",  new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                try{
 
+                try{
                     TextView txtsolicitados = getView().findViewById(R.id.txtsolicitadoshoy);
                     TextView txtasignados = getView().findViewById(R.id.txtasignadoshoy);
-
-
                     String json;
                     json = response.toString();
-
                     Log.i("TAG",response);
-
                     JSONArray jsonArray = null;
                     jsonArray = new JSONArray(json);
                     int totalsolicitados = 0;
