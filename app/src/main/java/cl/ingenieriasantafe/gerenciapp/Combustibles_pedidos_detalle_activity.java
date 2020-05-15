@@ -59,8 +59,6 @@ public class Combustibles_pedidos_detalle_activity extends AppCompatActivity {
         return true;
     }
 
-
-
     private void getPedidosInfo(){
         mRequestQueue = Volley.newRequestQueue(getApplicationContext());
         mStringRequest = new StringRequest(Request.Method.GET, apisolicitados + "/" + fecha + "/",  new Response.Listener<String>() {

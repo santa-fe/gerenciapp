@@ -47,7 +47,16 @@ public class Login_Activity extends AppCompatActivity {
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("nombre","Pablo Garrido");
                     editor.commit();
-                    Intent intent = new Intent(Login_Activity.this,MenuDrawer_Activity.class);
+                    Intent intent = new Intent(Login_Activity.this,MenuDrawerCombustibles_Activity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                if (usuario.getText().toString().equalsIgnoreCase("fgonzalez") && password.getText().toString().equals("8970")){
+                    SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("nombre","Freddy Gonzalez");
+                    editor.commit();
+                    Intent intent = new Intent(Login_Activity.this,MenuDrawerAsfaltos_Activity.class);
                     startActivity(intent);
                     finish();
                 }

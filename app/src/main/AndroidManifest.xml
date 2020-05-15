@@ -26,6 +26,16 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
+            android:name=".MenuDrawerAsfaltos_Activity"
+            android:label="@string/title_activity_menu_drawer_"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".MenuDrawerCombustibles_Activity"
+            android:label="@string/title_activity_menu_drawer_"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
             android:name=".Combustibles_detalle_asignados_Activity"
             android:label="@string/title_activity_menu_drawer_"
             android:parentActivityName=".MenuDrawer_Activity">

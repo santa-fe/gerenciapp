@@ -19,25 +19,4 @@
                 android:title="Consumo" />
         </menu>
     </item>
-
-
-
-    <item android:title="Asfaltos">
-        <menu>
-            <item
-                android:id="@+id/nav_asfaltos_entrada"
-                android:icon="@drawable/ic_assignment_return_black_24dp"
-                android:title="Entradas">
-            </item>
-            <item
-                android:id="@+id/nav_asfaltos_stock"
-                android:icon="@drawable/ic_view_list_black_24dp"
-                android:title="Inventario" />
-            <item
-                android:id="@+id/nav_asfaltos_salida"
-                android:icon="@drawable/ic_exit_to_app_black_24dp"
-                android:title="Salidas" />
-        </menu>
-    </item>
-
 </menu>

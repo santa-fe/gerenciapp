@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ededed"
-    tools:context=".Combustibles_compras_fragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ededed">
 
     <RelativeLayout
         style="@style/parent">
@@ -29,25 +29,22 @@
                     />
             </LinearLayout>
 
-
-
         </LinearLayout>
         <TextView
             style="@style/headerText"
             android:layout_gravity="center"
-            android:text="Combustibles - Compras"
+            android:text="Asfaltos - Stock"
             android:layout_marginTop="5dp"/>
-
         <TextView
             style="@style/headerText"
             android:layout_gravity="center"
             android:id="@+id/txtfechas"
-            android:text=""
+            android:text="Historico"
             android:layout_marginTop="40dp"/>
 
         <LinearLayout
             android:clipToPadding="false"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="40dp"
             android:gravity="center"
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -55,98 +52,86 @@
             android:layout_marginBottom="10dp">
 
             <android.support.v7.widget.CardView
-                android:id="@+id/solicitados_combustibles"
-                android:layout_width="320dp"
-                android:layout_height="150dp"
+                android:id="@+id/asignados_combustibles"
+                android:layout_width="350dp"
+                android:layout_height="270dp"
                 android:layout_marginTop="100dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground">
 
-                <RelativeLayout
+                <android.support.v4.widget.NestedScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <TextView
-                        style="@style/headerText"
-                        android:textSize="30dp"
-                        android:layout_marginTop="10dp"
-                        android:textColor="#000"
-                        android:layout_gravity="center"
-                        android:text="Lts Comprados"/>
 
-
-                    <TextView
-                        android:id="@+id/txtlts_compras"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="60dp"
-                        android:gravity="center"
-                        android:layout_centerHorizontal="true"
-                        android:textSize="40dp"
-                        android:textStyle="bold" />
-
-                </RelativeLayout>
-
-
-
-            </android.support.v7.widget.CardView>
-
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/asignados_combustibles"
-                android:layout_width="320dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="40dp"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
                         style="@style/headerText"
-                        android:textSize="30dp"
+                        android:textSize="25dp"
                         android:layout_marginTop="10dp"
                         android:layout_gravity="center"
-                        android:text="Costo total"
+                        android:text="Recursos"
                         android:textColor="#000" />
 
                     <TextView
-                        android:id="@+id/txttotal_compras"
+                        android:id="@+id/txtpolvoroca"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="60dp"
-                        android:gravity="center"
-                        android:layout_centerHorizontal="true"
-                        android:textSize="40dp"
+                        android:gravity="left"
+                        android:text="Polvo Roca"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="20dp"
                         android:textStyle="bold" />
 
-
-                </RelativeLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/precios_Cardview"
-                android:layout_width="320dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/txtgravilla12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="100dp"
+                        android:gravity="center"
+                        android:text="Gravilla 1/2"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        style="@style/headerText"
+                        android:id="@+id/txtgravilla34"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="140dp"
+                        android:gravity="center"
+                        android:text="Gravilla 3/4"
+                        android:layout_marginLeft="15dp"
                         android:textSize="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_gravity="center"
-                        android:text="Ver precios en tiempo real"
-                        android:textColor="#2196F3" />
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtc24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="180dp"
+                        android:gravity="center"
+                        android:text="C24"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/txtcomb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="220dp"
+                        android:gravity="center"
+                        android:text="Comb"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
+                </android.support.v4.widget.NestedScrollView>
             </android.support.v7.widget.CardView>
 
         </LinearLayout>
@@ -154,4 +139,4 @@
 
     </RelativeLayout>
 
-</FrameLayout>
+</LinearLayout>

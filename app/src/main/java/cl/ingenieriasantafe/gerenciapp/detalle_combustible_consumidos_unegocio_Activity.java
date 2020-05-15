@@ -50,10 +50,10 @@ public class detalle_combustible_consumidos_unegocio_Activity extends AppCompatA
     SimpleDateFormat dateFormat5 = new SimpleDateFormat("dd",Locale.getDefault());
     Date date5 = new Date();
     String dia = dateFormat5.format(date5);
+    int me = 0;
 
-    int me = (Integer.parseInt(mes))-1;
-    String mesanterior = anio+"-"+"0"+String.valueOf(me)+"-"+dia;
-    String mesanteriorsindia=anio+"-"+"0"+String.valueOf(me);
+    String mesanterior = "";
+    String mesanteriorsindia="";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -446,6 +446,20 @@ public class detalle_combustible_consumidos_unegocio_Activity extends AppCompatA
         final TextView txtdiferenciatrucktal = (TextView)findViewById(R.id.txttrucktal);
         final TextView txtdiferencialolol = (TextView)findViewById(R.id.txtlolol);
         final TextView txtdiferenciamayser = (TextView)findViewById(R.id.txtmayser);
+
+        if (mes.equals("01")){
+            int aniomenos = (Integer.parseInt(anio)-1);
+            mesanterior = String.valueOf(aniomenos)+"-"+"12"+"-"+dia;
+            mesanteriorsindia=String.valueOf(aniomenos)+"-"+"12";
+
+        }
+        else{
+            me = (Integer.parseInt(mes)-1);
+            mesanterior = anio+"-"+String.valueOf(me)+"-"+dia;
+            mesanteriorsindia=anio+"-"+String.valueOf(me);
+
+        }
+
 
         mRequestQueue = Volley.newRequestQueue(getApplicationContext());
         mStringRequest = new StringRequest(Request.Method.GET, apiconsumos+mesanteriorsindia+"-01" + "/" + mesanterior, new Response.Listener<String>() {

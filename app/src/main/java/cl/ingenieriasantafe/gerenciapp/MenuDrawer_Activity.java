@@ -14,7 +14,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.textclassifier.TextLinks;
 import android.widget.TextView;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -51,7 +50,7 @@ public class MenuDrawer_Activity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        Fragment fragment = new Dashboard_fragment();
+        Fragment fragment = new Combustibles_pedidos_fragment();
         getSupportFragmentManager().beginTransaction().add(R.id.content_frame,fragment).commit();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -252,6 +251,15 @@ public class MenuDrawer_Activity extends AppCompatActivity
             fragmentselect = true;
         }if (id ==R.id.nav_petroleo_consumo){
             fragment = new Combustibles_consumo_fragment();
+            fragmentselect = true;
+        }if (id == R.id.nav_asfaltos_entrada){
+            fragment = new Asfaltos_entradas_fragment();
+            fragmentselect = true;
+        }if (id == R.id.nav_asfaltos_stock){
+            fragment = new Asfaltos_stock_fragment();
+            fragmentselect = true;
+        }if (id ==  R.id.nav_asfaltos_salida){
+            fragment = new Asfaltos_salidas_fragment();
             fragmentselect = true;
         }
 

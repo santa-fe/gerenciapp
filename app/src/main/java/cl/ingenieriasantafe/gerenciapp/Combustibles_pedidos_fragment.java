@@ -120,7 +120,6 @@ public class Combustibles_pedidos_fragment extends Fragment {
                 }catch (Exception e){
                     e.printStackTrace();
                 }
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -133,11 +132,5 @@ public class Combustibles_pedidos_fragment extends Fragment {
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_TIMEOUT_MS));
         mRequestQueue.add(mStringRequest);
-
-
     }
-
-
-
-
 }

@@ -2,15 +2,19 @@ package cl.ingenieriasantafe.gerenciapp;
 
 import android.animation.ValueAnimator;
 import android.app.DownloadManager;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.icu.text.IDNA;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +31,10 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
@@ -37,9 +45,9 @@ public class Combustibles_compras_fragment extends Fragment {
 
 
 
-    public static final String apitaes = "http://santafeinversiones.org/api/taes";
     private RequestQueue mRequestQueue;
     private StringRequest mStringRequest;
+    public static final String url = "http://santafeinversiones.org/api/taes/copec";
 
     @Nullable
     @Override
@@ -55,7 +63,8 @@ public class Combustibles_compras_fragment extends Fragment {
         SharedPreferences preferences1 = getContext().getSharedPreferences("tae", Context.MODE_PRIVATE);
         String fecha_ultima_tae = preferences1.getString("fecha", "Sin compras");
 
-        fechasrango.setText("Ultima tae: "+fecha_ultima_tae);
+
+        fechasrango.setText("Sincronizada con Copec");
 
         CardView vermas = (CardView)getView().findViewById(R.id.precios_Cardview);
 
@@ -67,66 +76,93 @@ public class Combustibles_compras_fragment extends Fragment {
             }
         });
 
-        getInfoTaes();
+        new InfoTaes().execute();
+
     }
 
-    private void getInfoTaes(){
-        mRequestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        mStringRequest = new StringRequest(Request.Method.GET, apitaes, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try{
-                    final TextView txtlitros = getView().findViewById(R.id.txtlts_compras);
-                    final TextView totalcompras = getView().findViewById(R.id.txttotal_compras);
-                    String json;
-                    json = response.toString();
-                    Log.i("TAG",response);
-                    JSONArray jsonArray = null;
-                    jsonArray = new JSONArray(json);
-                    int total_lts_comprados = 0;
-                    int costototal_taes = 0;
 
-                    int count = jsonArray.length();
+    private class InfoTaes extends AsyncTask<Void,Void,Void>{
 
-                    for (int i = 0; i<jsonArray.length(); i++){
-                        JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        int ltstae = Integer.parseInt(jsonObject.getString("litrost"));
-                        int ctotal = Integer.parseInt(jsonObject.getString("valort"));
-                        total_lts_comprados = total_lts_comprados+ltstae;
-                        costototal_taes = costototal_taes+ctotal;
+        private ProgressDialog mProgressDialog;
 
-                        if (i == count-1){
-                            String fecha = jsonObject.getString("fechat");
-                            SharedPreferences preferences = getContext().getSharedPreferences("tae", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor editor = preferences.edit();
-                            editor.putString("fecha",fecha);
-                            editor.commit();
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mProgressDialog = new ProgressDialog(getActivity());
+            mProgressDialog.setMessage("Cargando información");
+            mProgressDialog.setCancelable(false);
+            mProgressDialog.show();
+
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            mRequestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
+            mStringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    try{
+                        final TextView txtlitros = getView().findViewById(R.id.txtlts_compras);
+                        final TextView totalcompras = getView().findViewById(R.id.txttotal_compras);
+                        String json;
+                        json = response.toString();
+                        JSONArray jsonArray = null;
+                        jsonArray = new JSONArray(json);
+
+                        int ltstotal=0;
+                        int ctotal=0;
+
+                        for (int i = 0; i<jsonArray.length(); i++){
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                            String ltsingenieria = jsonObject.getString("litros_ingenieria").replace(".","");
+                            String ltstransportes = jsonObject.getString("litros_transportes").replace(".","");
+                            String totalingenieria = jsonObject.getString("total_ingenieria");
+                            String totaltransportes = jsonObject.getString("total_transportes");
+
+                            ltstotal = (Integer.parseInt(ltsingenieria.substring(0,ltsingenieria.length()-3))+Integer.parseInt(ltstransportes.substring(0,ltstransportes.length()-3)));
+                            ctotal = (Integer.parseInt(totalingenieria.replace(".",""))+Integer.parseInt(totaltransportes.replace(".","")));
                         }
 
+                        String pattern ="###,###,###.##";
+                        DecimalFormat decimalFormat = new DecimalFormat(pattern);
+                        final String totalgastado = decimalFormat.format(ctotal);
+                        final String totallitros = decimalFormat.format(ltstotal);
+                        txtlitros.setText(totallitros);
+                        totalcompras.setText("$ "+totalgastado);
+
+                    }catch (Exception e){
+                        e.printStackTrace();
                     }
 
-                    String pattern ="###,###,###.##";
-                    DecimalFormat decimalFormat = new DecimalFormat(pattern);
-                    final String output = decimalFormat.format(total_lts_comprados);
-                    final String output2 = decimalFormat.format(costototal_taes);
-                    txtlitros.setText(output);
-                    totalcompras.setText(output2);
-
-                }catch (Exception e){
-                    e.printStackTrace();
                 }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+                }
+            });
+            mStringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                    15000,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_TIMEOUT_MS));
+            mRequestQueue.add(mStringRequest);
+            return null;
+        }
 
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            try{
+                Thread.sleep(2000);
+
+                mProgressDialog.dismiss();
+            }catch (Exception e){
+                e.printStackTrace();
             }
-        });
-        mStringRequest.setRetryPolicy(new DefaultRetryPolicy(
-                15000,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_TIMEOUT_MS));
-        mRequestQueue.add(mStringRequest);
+        }
+
     }
+
+
 }

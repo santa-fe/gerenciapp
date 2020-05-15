@@ -61,10 +61,11 @@ public class Combustibles_consumo_fragment extends Fragment {
     SimpleDateFormat dateFormat5 = new SimpleDateFormat("dd",Locale.getDefault());
     Date date5 = new Date();
     String dia = dateFormat5.format(date5);
+    int me = 0;
 
-    int me = (Integer.parseInt(mes))-1;
-    String mesanterior = anio+"-"+"0"+String.valueOf(me)+"-"+dia;
-    String mesanteriorsindia=anio+"-"+"0"+String.valueOf(me);
+    String mesanterior = "";
+    String mesanteriorsindia="";
+
 
 
 
@@ -223,12 +224,24 @@ public class Combustibles_consumo_fragment extends Fragment {
         final TextView flotalivianatext = (TextView)getView().findViewById(R.id.txtflotaliviana_detalle);
         final TextView otrostext = (TextView)getView().findViewById(R.id.txtotros_detalle);
 
+        if (mes.equals("01")){
+            int aniomenos = (Integer.parseInt(anio)-1);
+            mesanterior = String.valueOf(aniomenos)+"-"+"12"+"-"+dia;
+            mesanteriorsindia=String.valueOf(aniomenos)+"-"+"12";
+        }
+        else{
+            me = (Integer.parseInt(mes)-1);
+            mesanterior = anio+"-"+String.valueOf(me)+"-"+dia;
+            mesanteriorsindia=anio+"-"+String.valueOf(me);
+        }
+
         mRequestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         mStringRequest = new StringRequest(Request.Method.GET, apiconsumos+mesanteriorsindia+"-01" + "/" + mesanterior, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
                 try{
+
                     String json;
                     json = response.toString();
                     Log.i("TAG",response);
@@ -326,8 +339,6 @@ public class Combustibles_consumo_fragment extends Fragment {
                 }catch (Exception e){
                     e.printStackTrace();
                 }
-
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -335,12 +346,10 @@ public class Combustibles_consumo_fragment extends Fragment {
 
             }
         });
-
         mStringRequest.setRetryPolicy(new DefaultRetryPolicy(
                 15000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_TIMEOUT_MS));
         mRequestQueue.add(mStringRequest);
-
     }
 }
